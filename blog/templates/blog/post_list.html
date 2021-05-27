@@ -6,19 +6,15 @@
 </head>
 <body>
     <div>
-        <h1><a href="/">Blog Django Girls</a></h1>
+        <h1><a href="/">Blog Django Girls!</a></h1>
     </div>
 
-    <div>
-        <p>publicado: 26/05/2014, 08:57</p>
-        <h2><a href="">Meu primeiro post</a></h2>
-        <p>O aprendizado é algo gradativo</p>
-    </div>
-
-    <div>
-        <p>publicado: 26/05/2014, 08:57</p>
-        <h2><a href="">Meu segundo post</a></h2>
-        <p>Não tem fim, mas os resultados são gratificantes.</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
